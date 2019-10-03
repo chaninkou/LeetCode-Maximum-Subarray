@@ -3,12 +3,16 @@ package maximum;
 public class FindMaxSubArrayFunction {
 	// O(n)
 	public int maxSubArray(int[] nums) {
+		// Start from the first element
 		int currentMax = nums[0];
 		int maxEndHere = nums[0];
 
 		for (int i = 1; i < nums.length; i++) {
+			// Bottom up approach
+			// Similar to maximum product sub array
 			maxEndHere = Math.max(maxEndHere + nums[i], nums[i]);
 
+			// Keeping track of the maximum
 			currentMax = Math.max(currentMax, maxEndHere);
 		}
 
