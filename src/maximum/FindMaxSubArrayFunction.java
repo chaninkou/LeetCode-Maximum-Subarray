@@ -21,23 +21,25 @@ public class FindMaxSubArrayFunction {
 	}
 
 	// Another way to do it by using dynamic programming
-//	 public int maxSubArray(int[] nums){
-//		 int[] dp = new int[nums.length];
-//	
-//		 dp[0] = nums[0];
-//	
-//		 // Also starts from index 0
-//		 int currentMax = dp[0];
-//	
-//		 // Same as above
-//		 for(int i = 1; i < nums.length; i++){
-//			 // dp[i-1] is the same thing as the previous
-//			 dp[i] = Math.max(dp[i - 1] + nums[i], nums[i]);
-//			 
-//			 // since dp[i] will be the current sum end
-//			 currentMax = Math.max(currentMax, dp[i]);
-//		 }
-//	
-//		 return currentMax;
-//	 }
+	// The last element of dp does not keep track of the maximum, unique case
+	 public int maxSubArray1(int[] nums){
+		 // dp will keep of the maximum between the current element or previous dp + current element
+		 int[] dp = new int[nums.length];
+	
+		 dp[0] = nums[0];
+	
+		 // Also starts from index 0
+		 int currentMax = dp[0];
+	
+		 for(int i = 1; i < nums.length; i++){
+			 // maximum of dp[i-1] + nums[i] or nums[i]
+			 dp[i] = Math.max(dp[i - 1] + nums[i], nums[i]);
+			 
+			 // currentMax will just keep track of the max value of dp
+			 currentMax = Math.max(currentMax, dp[i]);
+		 }
+	
+		 return currentMax;
+	 }
+	
 }
