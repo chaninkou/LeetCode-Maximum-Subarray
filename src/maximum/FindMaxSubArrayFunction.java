@@ -21,7 +21,7 @@ public class FindMaxSubArrayFunction {
 	}
 
 	// Another way to do it by using dynamic programming
-	// The last element of dp does not keep track of the maximum, unique case
+	// The last element of dp does not keep track of the maximum, unique case, uses a variable to keep track of max
 	 public int maxSubArray1(int[] nums){
 		 // dp will keep of the maximum between the current element or previous dp + current element
 		 int[] dp = new int[nums.length];
