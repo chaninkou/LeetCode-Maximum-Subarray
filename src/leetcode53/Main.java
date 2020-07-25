@@ -1,4 +1,4 @@
-package maximum;
+package leetcode53;
 
 import java.util.Arrays;
 
