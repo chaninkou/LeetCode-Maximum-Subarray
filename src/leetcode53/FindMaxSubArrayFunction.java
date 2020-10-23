@@ -1,13 +1,13 @@
 package leetcode53;
 
 public class FindMaxSubArrayFunction {
-	// O(n) just trying to get the largest sum, but not storing any position
+	// O(n) bottom up approach to get max sum
 	public int maxSubArray(int[] nums) {
 
 		int currentMax = nums[0];
 		int maxEndHere = nums[0];
 
-		// Starting from index 1 cause index 0 is already the max
+		// Starting from index 1, index 0 already added to max
 		for (int i = 1; i < nums.length; i++) {
 			// Bottom up approach
 			// Similar to maximum product sub array
