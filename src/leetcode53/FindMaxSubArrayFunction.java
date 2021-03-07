@@ -2,6 +2,7 @@ package leetcode53;
 
 public class FindMaxSubArrayFunction {
 	// O(n) bottom up approach to get max sum
+	// without extra o(n) array.
 	public int maxSubArray(int[] nums) {
 
 		int currentMax = nums[0];
